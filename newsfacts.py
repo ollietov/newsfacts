@@ -62,7 +62,7 @@ def main():
             news_title, news_description, news_country = get_news(category)
             # print(f"{category.upper()} NEWS:\n {news_title} - {news_description[:150]}...\n")
             shortened = shorten_title(news_title, news_description)
-            fact = get_fact(news_title, news_description, news_country)
+            fact = get_fact(news_title[:60], news_description, news_country)
             # print(f"{shortened.upper()} FACT:\n {fact}\n")
             notify(shortened, fact)
             time.sleep(60*60*2) # sleeps for 2 hrs
